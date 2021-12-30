@@ -18,7 +18,7 @@ const mailReciever = 'contact@abcdeducators.in';
 const menuItems = [["Courses", "#courses"],
 ["Programs", "#programs"],
 ["About Us", "#about"],
-["Request A Demo", "#demo","box"]];
+["Contact Us", "#contact","box"]];
 
 // hero section content
 const heroHead = "Learn From the Experts";
