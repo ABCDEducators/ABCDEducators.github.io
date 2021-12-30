@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script></script>
+    <title>ABCDEducators</title>
+    <link rel="stylesheet" href="main.css" text ="text/css">
+    <script src="main.js" defer></script>
+    <script src="data.js"></script>
+    <script src="config.js"></script>
+    <script src="svgs.js"></script>
+
+
+    <!-- smooth scroll script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
+
+</head>
+<body>
+<!-- global declaration for page -->
+<script>
+    let cls = '';
+</script>
+
+<!-- development warning -->
+<script>
+    if(dev == true){
+        let elem = 
+        `<div class="general-notice">
+            <p>This site is under constant contsruction. So some or all features may appear broken at times. Please be patient untill official release.</p>
+            <button class="general-notice-close">Close</button>
+        </div>`
+        elem.write();
+        const generalNotice = document.querySelector('.general-notice');
+        generalNotice.querySelector('button').addEventListener('click', () =>{generalNotice.style.display = "none";})
+    }
+</script>
+
+
+
+
+<!-- header starts here -->
+<header>
+    <div class="logo">
+        <script>logo.write();</script>
+    </div>
+
+    <!-- desktop menu here-->
+    <div class="desktop-menu">
+            <script>
+                cls = '';
+                for(let i=0;i<menuItems.length;i++){
+                    if(menuItems[i].length > 2) cls = menuItems[i][2];
+                    let elem = 
+                    `<li class='desktop-menu-list-item  ${cls}'>
+                        <a href='${menuItems[i][1]}' class='smooth-scroll'>
+                            ${menuItems[i][0]}
+                        </a>
+                    </li>`;
+                    elem.write();
+                }
+
+            </script>
+    </div>
+
+    <!-- mobile menu here -->
+    <div class="mobile-menu">
+        <div class="menu-icon">
+            <script>menuIcon.write();</script>
+
+        </div>
+        <div class="mobile-menu-list">
+            <li class="mobile-menu-list-item close-btn"><button><script>menuCloseIcon.write();</script></button></li>
+
+            <script>
+                cls = '';
+                for(let i=0; i<menuItems.length; i++){
+                    if(menuItems[i].length > 2) cls = menuItems[i][2];
+                    let elem = 
+                    `<li class='mobile-menu-list-item'>
+                        <a href='${menuItems[i][1]}' class='smooth-scroll ${cls}'>
+                            ${menuItems[i][0]}
+                        </a>
+                    </li>`;
+                    elem.write();
+                }
+            </script>
+        </div>            
+    </div>
+</header>
+
+
+<!-- hero section starts -->
+<section class="hero" id = "home">
+    <picture class="hero-background-img">
+        <source media="(max-width:750px)" srcset="assets/img/hero-mobile.jpg">
+        <source media="(min-width:751px)" srcset="assets/img/hero_1-min.jpg">
+        <img src="assets/img/hero_1-min.jpg" alt="">
+    </picture>
+    <div class="hero-content">
+        <h1 class="hero-content-heading"><script>heroHead.write();</script></h1>
+        <p class="hero-content-para"><script>heroPara.write();</script></p>
+        <button class="hero-content-btn"><a href = "" id= "pno1">Call Us Now</a></button>
+        <script>document.querySelector('#pno1').setAttribute("href",`tel:${phone}`)</script>
+    </div>
+    <div class="hero-illustration">
+        <img src="assets/img/hero-illustration.svg" alt="">
+    </div>
+</section>
+
+<!-- courses description here -->
+<section class="courses" id="courses">
+    <div class="courses-heading">Courses</div>
+    <div class="courses-para"><script>coursePara.write();</script></div>
+    <div class="courses-content">
+        <ul class="courses-content-list">
+            <script>
+                for(let i=0;i < courseList.length; i++){
+                    let elem = 
+                    `<li class='courses-content-list-item'>
+                        ${courseList[i]}
+                    </li>`
+                    elem.write();
+                }
+            </script>
+        </ul>
+        <div class="courses-content-illustration">  
+                <img src="assets/img/teacher-illustration.svg" alt="">
+            </div>
+    </div>
+</section>
+
+<!-- programs description here  -->
+<section class="programs" id = "programs">
+    <div class="programs-heading">Programs</div>
+    
+    <div class="programs-content">
+        <div class="prog-box-container">
+            <div class="programs-content-prog prog-box">
+                <div class="prog-box-img">
+                    <img src="assets/img/img_1-min.jpg" alt="">
+                </div>
+                <div class="prog-box-content">
+                    <h1 class="prog-box-content-head">Online Tutorials</h1>
+                    <p class="prog-box-content-para">Best online tutoring in your local accent to brighten your child's future even further.</p>
+                </div>
+            </div>
+            <div class="programs-content-prog prog-box">
+                <div class="prog-box-img">
+                    <img src="assets/img/img_2-min.jpg" alt="">
+                </div>
+                <div class="prog-box-content">
+                    <h1 class="prog-box-content-head">Homework Help</h1>
+                    <p class="prog-box-content-para">We provide in-depth help with homework also, to reduce the burden on child and to grasp the minute details of the concept.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="prog-box-container">
+
+            <div class="programs-content-prog prog-box">
+                <div class="prog-box-img"><img src="assets/img/img_3-min.jpg" alt=""></div>
+                <div class="prog-box-content">
+                    <h1 class="prog-box-content-head">1 on 1 Live Classes</h1>
+                    <p class="prog-box-content-para">In one-on-one classes we have uniquely designed environment for your child only.</p>
+                </div>
+            </div>
+             <div class="programs-content-prog prog-box">
+                <div class="prog-box-img"><img src="assets/img/img_4-min.jpg" alt=""></div>
+                <div class="prog-box-content">
+                    <h1 class="prog-box-content-head">All Subject Tutors</h1>
+                    <p class="prog-box-content-para">You can find the tutor for all the subjects you need here. All Tutors are highly experienced in innovative ways of teaching</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- testimony section -->
+<section class="testimony">
+    <h1 class="testimony-head">Student Experience</h1>
+    <div class="testimony-content">
+        <script>
+            for(let i=0;i< testimonySays.length; i++){
+                let elem = 
+                `<div class="testimony-says">
+                    <p>${testimonySays[i][0]}</p>
+                    <h3 class="testimony-says-sayer">${testimonySays[i][1]}</h3>
+                    <h6 class="testimony-says-rank">${testimonySays[i][2]}</h6>
+                </div>`
+                elem.write();
+            }
+        </script>
+
+        <button class="next-btn">&#10095;</button>
+        <button class="prev-btn">&#10094;</button>        
+    </div>    
+</section>
+
+<!-- for common background of about and contact section -->
+<div class="about-contact-bg">
+    <img src="assets/img/about-contact-bg-min.jpeg" alt="" class= "bg-img">
+
+    <!-- about section starts here -->
+    <section class="about" id = "about">
+        <h1 class="about-head">About ABCDE</h1>
+        <p class="about-para">
+            <script>aboutPara.write();</script>
+        </p>
+    </section>
+
+    <!-- contact section start here -->
+    <section class="contact" id = "contact">
+        <div class="contact-content">
+            <h1 class="contact-content-head">Give us a Call</h1>
+            <p class="contact-content-para">To reach us or enquire about anything
+                <ul class="contact-content-list">
+                    <li class="contact-content-list-item">
+                        <a href="" id="pno2"> Call us at : +91 <script>phone.write();</script></a>
+                        <script>document.querySelector('#pno2').setAttribute("href",`tel:${phone}`)</script>
+                    </li>
+                    
+                    <li class="contact-content-list-item">
+                        <a href="" id="pno3">Whatsapp us at : +91 <script>phone.write();</script></a>
+                        <script>document.querySelector('#pno3').setAttribute("href",`https://wa.me/+91${phone}?text=${wappMsg}`)</script>
+                    </li>
+
+                    <li class="contact-content-list-item">Email :<a href="" id="pno4"><script>email.write();</script></a></li>
+                    <script>document.querySelector('#pno4').setAttribute("href",`mailto:${email}`)</script>
+                </ul>
+            </p>
+           
+            <button><a href="" id="pno5">Make a call</a></button>
+            <script>document.querySelector('#pno5').setAttribute("href",`tel:${phone}`)</script>
+            
+        </div>
+
+        <div class="contact-illustration">
+            <img src="assets/img/about-bg-img.svg" alt="">
+        </div>
+    </section>
+</div>
+
+<!-- footer starts here -->
+<footer>
+    <div class="foot-info">
+        <div class="foot-links">
+            <div class="foot-links-head">LINKS</div>
+            <div class="foot-links-content">
+                <li class="foot-links-content-item"><a href="#home" class="smooth-scroll">HOME</a></li>
+                <li class="foot-links-content-item"><a href="#programs" class="smooth-scroll">Programs</a></li>
+                <li class="foot-links-content-item"><a href="#courses" class="smooth-scroll">Courses</a></li>
+                <li class="foot-links-content-item"><a href="#demo" class="smooth-scroll">Free Demo</a></li>
+                <li class="foot-links-content-item"><a href="#feedback" class="smooth-scroll">Feedback</a></li>
+            </div>
+        </div>
+    
+        <div class="foot-links">
+            <div class="foot-links-head">Contact Information</div>
+            <div class="foot-links-content">
+                <li class="foot-links-content-item"> Phone : <br><a href="" id="pno6"><script>phone.write();</script></a></li>
+                <script>document.querySelector('#pno6').setAttribute("href",`tel:${phone}`)</script>
+
+                <li class="foot-links-content-item">Whatsapp : <br>
+                <a href="" id="pno7">+91 <script>phone.write();</script></a></li>
+                <script>document.querySelector('#pno7').setAttribute("href",`https://wa.me/+91${phone}?text=${wappMsg}`)</script>
+
+                <li class="foot-links-content-item">Email : <br><a href="" id="email1"><script>email.write();</script></a></li>
+                <script>document.querySelector('#email1').setAttribute("href",`mailto:${email}`)</script>
+
+            </div>
+        </div>
+
+        <div class="foot-about">
+            <div class="foot-about-head">ABOUT ABCDE</div>
+            <div class="foot-about-para">
+                <script>footerAbout.write();</script>
+            </div>
+        </div>
+    </div>
+
+    <div class="foot-copyright">
+        <p><script>copyright.write();</script></p>
+        <p>Developed and maintained by : <a href="" id="dev1"><script>developer.write();</script></a></p>
+        <script>document.querySelector('#dev1').setAttribute("href",`${developerSite}`)</script>
+
+    </div>
+</footer>
+
+</body>
+</html>
