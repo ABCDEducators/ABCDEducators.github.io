@@ -1,15 +1,5 @@
 
 
-// simplify from : <script>document.write(var)</script>
-// to <script>var.write()</script>
-function writeFn(doc)
-{
-  if(!doc)doc=document;
-  doc.write(this);
-  return (this);
-}
-String.prototype.write=writeFn;
-
 // for creating mobile menu
 const openBtn = document.querySelector('.menu-icon');
 const closeBtn = document.querySelector('.close-btn');

@@ -20,6 +20,15 @@
 <!-- global declaration for page -->
 <script>
     let cls = '';
+    //  simplify from : document.write(var)
+    //  to var.write()
+    function writeFn(doc)
+    {
+    if(!doc)doc=document;
+    doc.write(this);
+    return (this);
+    }
+    String.prototype.write=writeFn;
 </script>
 
 <!-- development warning -->
