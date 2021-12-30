@@ -48,12 +48,12 @@ const programBox = [
 
 // testimony 
 const testimonySays = [
-                ['Newer ways of teaching really help to build the concepts from ground up','Vaibhav Sharma','Student'],
-                ['The engaging classes and interactive teaching methods sure help be excel in my subject','Divya Shrivastav','Student'],
-                ["Mr. Farhan is a great teacher! His way of teaching is unique. He explains to me a concept as many times as I need it. He is very patient. If I'm ever busy he’s always willing to cooperate and it’s great to have him tutor me. I’ve improved tremendously in my class with him as my tutor." ,"Himangini Agrawal","Georgia", "USA"],
-                ['Mr. Farhan at ABCD Educators is a wonderful teacher! His way of teaching is very simple and full of basic concepts. I\’ve improved a lot in my grades with ABCD Educators.','Arashdeep','Pre calculus, Canada'],
-                ['Worth every penny i have ever spent in the education for the coaching','Rekha Verma','Mother of Rahul Verma'],
-                ['The institute has helped me in various of ways to get better at the job', 'Rahul Bhargav','Student']];
+    ["Mr. Farhan is a great teacher! His way of teaching is unique. He explains to me a concept as many times as I need it. He is very patient. If I'm ever busy he’s always willing to cooperate and it’s great to have him tutor me. I’ve improved tremendously in my class with him as my tutor." ,"Himangini Agrawal","Georgia", "USA"],
+    ['Mr. Farhan at ABCD Educators is a wonderful teacher! His way of teaching is very simple and full of basic concepts. I\’ve improved a lot in my grades with ABCD Educators.','Arashdeep','Pre calculus, Canada'],
+    ['Newer ways of teaching really help to build the concepts from ground up. Facility and Mr. Farhan helps me to engage in topic in better methods','Vaibhav Sharma','Student'],
+    ['The engaging classes and interactive teaching methods sure help be excel in my subject','Divya Shrivastav','Student'],
+    ['Worth every penny i have ever spent in the education for the coaching','Rekha Verma','Mother of Rahul Verma'],
+    ['The institute has helped me in various of ways to get better at the job', 'Rahul Bhargav','Student']];
 
 
 // about section content
@@ -61,4 +61,3 @@ const aboutPara = "Auxilium Beneficium Concept Developers and Educators (ABCDE) 
 
 // footer content
 let footerAbout = "Auxilium Beneficium Concept Developers and Educators (ABCDE) is an innovative institution working in the field of online education. We are an India based company with a team of well trained intellectuals.";
-

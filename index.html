@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script></script>
     <title>ABCDEducators</title>
-    <link rel="stylesheet" href="main.css" text ="text/css">
+    <link rel="stylesheet" href="main.css" text ="text/css" />
     <script src="main.js" defer></script>
     <script src="data/data.js"></script>
     <script src="data/config.js"></script>
@@ -15,13 +14,19 @@
     <!-- smooth scroll script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
 
+    <!-- flickity for carousel -->
+    <link rel="stylesheet" href="assets/flickity-for-carousel/flickity.css" media="screen" />
+    <script src="assets/flickity-for-carousel/flickity.pkgd.min.js"></script>
+
+    <!-- solution for favicon.ico 404 not found error -->
+    <link rel="shortcut icon" href="#"> 
+
 </head>
 <body>
 <!-- global declaration for page -->
 <script>
     let cls = '';
-    //  simplify from : document.write(var)
-    //  to var.write()
+    //  simplify from : document.write(var) to var.write()
     function writeFn(doc)
     {
     if(!doc)doc=document;
@@ -186,26 +191,29 @@
 </section>
 
 <!-- testimony section -->
+
 <section class="testimony">
     <h1 class="testimony-head">Student Experience</h1>
-    <div class="testimony-content">
+    <div class="testimony-content gallery js-flickity">
         <script>
             for(let i=0;i< testimonySays.length; i++){
                 let elem = 
-                `<div class="testimony-says">
+                `<div class="testimony-says gallery-cell">
                     <p>${testimonySays[i][0]}</p>
                     <h3 class="testimony-says-sayer">${testimonySays[i][1]}</h3>
-                    <h6 class="testimony-says-rank">${testimonySays[i][2]}</h6>
+                    <h5 class="testimony-says-rank">${testimonySays[i][2]}</h6>
                 </div>`
                 elem.write();
             }
+            var flkty = new Flickity( '.testimony-content', {
+                // options
+                cellAlign: 'left',
+                contain: true
+            });
         </script>
-
-        <button class="next-btn">&#10095;</button>
-        <button class="prev-btn">&#10094;</button>        
+        
     </div>    
 </section>
-
 <!-- for common background of about and contact section -->
 <div class="about-contact-bg">
     <img src="assets/img/about-contact-bg-min.jpeg" alt="" class= "bg-img">
@@ -296,5 +304,8 @@
     </div>
 </footer>
 
+
+
 </body>
 </html>
+

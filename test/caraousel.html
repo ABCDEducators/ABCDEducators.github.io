@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Test</title>
+    <link rel="stylesheet" href="flickity.css" media="screen">
+
+    <style>
+ * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body { font-family: sans-serif; 
+padding:0;
+margin:0;
+}
+
+.gallery {
+}
+
+.gallery-cell {
+  /* width: 28%; */
+  height: 200px;
+  /* margin-right: 10px; */
+  background:#494563;
+  /* counter-increment: gallery-cell; */
+}
+
+.gallery-cell.is-selected {
+  background: #ED2;
+  background: #1266B5;
+
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  /* content: counter(gallery-cell); */
+  line-height: 200px;
+  font-size: 80px;
+
+  font-family: 'FontAwesome';
+  content: "\201C";
+  color:whitesmoke;
+  position: absolute;
+  font-size: 170px;
+  opacity: 0.90;
+  font-style: normal;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: -10px;
+  left: 50%;
+
+}
+
+.testimony {
+  height: auto;
+  /* display: flex; */
+  /* flex-direction: column;  */
+  /* align-items: center; */
+  /* justify-content: center; */
+  overflow: hidden;
+  position: relative;
+  padding-bottom:20px;
+  background: #EEE;
+
+}
+
+.testimony-says p {
+  padding: 0;
+  text-align: center;
+  color:var(--color-border);
+  color:whitesmoke;
+}
+.testimony-says h5,
+.testimony-says h3{
+  color:var(--color-border);
+  padding:0;
+  margin:0;
+  color:whitesmoke;
+}
+
+.testimony-head {
+  font-size: 30px;
+  padding: 20px;
+  text-align:center;
+}
+.testimony-content {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.testimony-says {
+  border: 2px solid var(--color-border);
+  border-radius:20px;
+  width: 350px;
+  height: 350px;
+  padding : 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 10px;
+}
+
+
+</style>
+</head>
+<body>
+<script src="flickity.pkgd.min.js"></script>
+<script>
+    function writeFn(doc)
+    {
+    if(!doc)doc=document;
+    doc.write(this);
+    return (this);
+    }
+    String.prototype.write=writeFn;
+
+// testimony 
+const testimonySays = [
+                ['Newer ways of teaching really help to build the concepts from ground up','Vaibhav Sharma','Student'],
+                ['The engaging classes and interactive teaching methods sure help be excel in my subject','Divya Shrivastav','Student'],
+                ["Mr. Farhan is a great teacher! His way of teaching is unique. He explains to me a concept as many times as I need it. He is very patient. If I'm ever busy he’s always willing to cooperate and it’s great to have him tutor me. I’ve improved tremendously in my class with him as my tutor." ,"Himangini Agrawal","Georgia", "USA"],
+                ['Mr. Farhan at ABCD Educators is a wonderful teacher! His way of teaching is very simple and full of basic concepts. I\’ve improved a lot in my grades with ABCD Educators.','Arashdeep','Pre calculus, Canada'],
+                ['Worth every penny i have ever spent in the education for the coaching','Rekha Verma','Mother of Rahul Verma'],
+                ['The institute has helped me in various of ways to get better at the job', 'Rahul Bhargav','Student']];
+
+
+</script>
+<!-- testimony section -->
+<section class="testimony">
+    <h1 class="testimony-head">Student Experience</h1>
+    <div class="testimony-content gallery js-flickity">
+        <script>
+            for(let i=0;i< testimonySays.length; i++){
+                let elem = 
+                `<div class="testimony-says gallery-cell">
+                    <p>${testimonySays[i][0]}</p>
+                    <h3 class="testimony-says-sayer">${testimonySays[i][1]}</h3>
+                    <h5 class="testimony-says-rank">${testimonySays[i][2]}</h6>
+                </div>`
+                elem.write();
+            }
+            var flkty = new Flickity( '.testimony-content', {
+                // options
+                cellAlign: 'left',
+                contain: true
+            });
+        </script>
+        
+    </div>    
+</section>
+
+</body>
+</html>
+
+<!-- old -->
+<!-- testimony section -->
+<section class="testimony">
+    <h1 class="testimony-head">Student Experience</h1>
+    <div class="testimony-content">
+        <script>
+            for(let i=0;i< testimonySays.length; i++){
+                let elem = 
+                `<div class="testimony-says">
+                    <p>${testimonySays[i][0]}</p>
+                    <h3 class="testimony-says-sayer">${testimonySays[i][1]}</h3>
+                    <h6 class="testimony-says-rank">${testimonySays[i][2]}</h6>
+                </div>`
+                elem.write();
+            }
+        </script>
+
+        <button class="next-btn">&#10095;</button>
+        <button class="prev-btn">&#10094;</button>        
+    </div>    
+</section>
+
+
+<!-- old css -->
+/* newer here */
+.testimony {
+  height: auto;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding-bottom:20px;
+}
+.testimony-head {
+  font-size: 30px;
+  padding: 20px;
+}
+.testimony-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.testimony-says {
+  border: 2px solid var(--color-border);
+  border-radius:20px;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 10px;
+}
+.testimony-says::before {
+  font-family: 'FontAwesome';
+  content: "\201C";
+  color:var(--color-border);
+  position: absolute;
+  font-size: 170px;
+  opacity: 0.90;
+  font-style: normal;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: -10px;
+  left: 50%;
+}
+.testimony-says p {
+  padding: 10px;
+  text-align: center;
+  color:var(--color-border);
+}
+.testimony-says h6,
+.testimony-says h3{
+  color:var(--color-border);
+}
+.testimony-content .next-btn, .testimony-content .prev-btn {
+  border: none;
+  background: none;
+  color: rgba(0, 0, 0, 0.7);
+  width: 20px;
+  height: 20px;
+  transform:scale(2);
+  position: absolute;
+}
+.testimony-content .next-btn {
+  right: 10px;
+  border:2px solid var(--color-border);
+
+}
+.testimony-content .prev-btn {
+  left: 10px;
+  border:2px solid var(--color-border);
+
+}
+.testimony-content .prev-btn:hover, .testimony-content .next-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+
+
